@@ -91,6 +91,7 @@ namespace ExerciceL3
             cmd.CommandType = CommandType.Text ;
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
+            
 
 
             
