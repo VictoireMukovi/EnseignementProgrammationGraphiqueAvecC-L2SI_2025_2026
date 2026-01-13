@@ -26,6 +26,19 @@ namespace ExerciceL3
 
 
 
+        public OleDbConnection GetConnexion()
+        {
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+
+            return conn;
+        }
+
+        public void FermerConnexion()
+        {
+            if (conn.State != ConnectionState.Closed)
+                conn.Close();
+        }
 
         public void ExecuterCommande(string requete, string messageSucces)
         {

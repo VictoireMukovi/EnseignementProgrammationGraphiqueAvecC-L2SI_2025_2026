@@ -29,5 +29,10 @@ namespace ExerciceL3
         {
             //connexion.ExecuterCommande("INSERT INTO Produits(Description,Prix_unitaire_de_vente) VALUES ("'+tx+'")", "Enregistrement produit effectuée avec succes");
         }
+
+        private void frmProduits_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

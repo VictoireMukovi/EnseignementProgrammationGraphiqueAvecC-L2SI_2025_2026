@@ -90,6 +90,8 @@ namespace ExerciceL3
 
                 MessageBox.Show(" Erreur de connexion à la base de données");
             }
+             Afficher();
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -104,10 +106,35 @@ namespace ExerciceL3
             //commandeZetu("INSERT INTO Clients(Nom,Adresse) VALUES('"+txtNom.Text+"','"+txtAdress.Text+"')","Enregistrer avec Succes");
             Connexion cn = new Connexion();
             cn.ExecuterCommande("INSERT INTO Clients(Nom,Adresse) VALUES('" + txtNom.Text + "','" + txtAdress.Text + "')", "Enregistrer avec Succes");
+            Afficher();
 
         }
 
+        void Afficher()
+        {
+            OleDbConnection con = connexion.GetConnexion();
 
+            string req = "SELECT * FROM Clients";
+            OleDbCommand cmd = new OleDbCommand(req, con);
+            
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            reader.Read();
+
+
+            dataGridViewClients.Rows.Clear();
+
+            while (reader.Read())
+            {
+                dataGridViewClients.Rows.Add(
+                    reader[0].ToString(), // Colonne 1
+                    reader[1].ToString(), // Colonne 2
+                    reader[2].ToString()  // Colonne 3
+                );
+            }
+
+            reader.Close();
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             commandeZetu("DELETE FROM Clients WHERE IdClient=1","Suppression réussie");

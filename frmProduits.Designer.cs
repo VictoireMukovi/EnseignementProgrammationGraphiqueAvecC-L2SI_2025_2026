@@ -123,6 +123,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmProduits";
             this.Text = "frmProduits";
+            this.Load += new System.EventHandler(this.frmProduits_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
