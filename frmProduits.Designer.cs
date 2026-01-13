@@ -31,9 +31,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPVU = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDesignation = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -66,12 +66,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
+            // txtPVU
             // 
-            this.textBox2.Location = new System.Drawing.Point(205, 134);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(263, 26);
-            this.textBox2.TabIndex = 11;
+            this.txtPVU.Location = new System.Drawing.Point(205, 134);
+            this.txtPVU.Name = "txtPVU";
+            this.txtPVU.Size = new System.Drawing.Size(263, 26);
+            this.txtPVU.TabIndex = 11;
             // 
             // label2
             // 
@@ -82,12 +82,12 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "PV Unitaire";
             // 
-            // textBox1
+            // txtDesignation
             // 
-            this.textBox1.Location = new System.Drawing.Point(205, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 26);
-            this.textBox1.TabIndex = 9;
+            this.txtDesignation.Location = new System.Drawing.Point(205, 56);
+            this.txtDesignation.Name = "txtDesignation";
+            this.txtDesignation.Size = new System.Drawing.Size(263, 26);
+            this.txtDesignation.TabIndex = 9;
             // 
             // label1
             // 
@@ -117,9 +117,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPVU);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDesignation);
             this.Controls.Add(this.label1);
             this.Name = "frmProduits";
             this.Text = "frmProduits";
@@ -133,9 +133,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPVU;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDesignation;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
     }

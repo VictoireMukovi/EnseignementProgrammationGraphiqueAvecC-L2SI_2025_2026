@@ -97,10 +97,16 @@ namespace ExerciceL3
 
         }
 
+        Connexion connexion = new Connexion();
+
         private void button1_Click(object sender, EventArgs e)
         {
-            commandeZetu("INSERT INTO Clients(Nom,Adresse) VALUES('"+txtNom.Text+"','"+txtAdress.Text+"')","Enregistrer avec Succes");
+            //commandeZetu("INSERT INTO Clients(Nom,Adresse) VALUES('"+txtNom.Text+"','"+txtAdress.Text+"')","Enregistrer avec Succes");
+            Connexion cn = new Connexion();
+            cn.ExecuterCommande("INSERT INTO Clients(Nom,Adresse) VALUES('" + txtNom.Text + "','" + txtAdress.Text + "')", "Enregistrer avec Succes");
+
         }
+
 
         private void button3_Click(object sender, EventArgs e)
         {

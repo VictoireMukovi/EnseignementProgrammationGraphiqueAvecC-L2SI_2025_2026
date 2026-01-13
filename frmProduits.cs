@@ -16,6 +16,7 @@ namespace ExerciceL3
         {
             InitializeComponent();
         }
+        Connexion connexion = new Connexion();
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -26,7 +27,7 @@ namespace ExerciceL3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            //connexion.ExecuterCommande("INSERT INTO Produits(Description,Prix_unitaire_de_vente) VALUES ("'+tx+'")", "Enregistrement produit effectuée avec succes");
         }
     }
 }
