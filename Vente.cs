@@ -20,7 +20,7 @@ namespace ExerciceL3
         Connexion connexion = new Connexion();
         void ChargerClientsDansComboBox()
         {
-            OleDbConnection con = connexion.GetConnexion();
+             OleDbConnection con = connexion.GetConnexion();
 
             string req = "SELECT IdClient, Nom FROM Clients";
             OleDbCommand cmd = new OleDbCommand(req, con);
@@ -53,8 +53,8 @@ namespace ExerciceL3
             while (reader.Read())
             {
                 // Texte affiché dans le ComboBox
-                comboBoxClients.Items.Add(
-                   reader["IdProduit"].ToString() + reader["Description"].ToString()
+                comboBoxProduits.Items.Add(
+                   reader["IdProduit"].ToString()+"  " + reader["Description"].ToString()
                 );
             }
 
@@ -65,6 +65,57 @@ namespace ExerciceL3
         {
             ChargerProduitsDansComboBox();
             ChargerClientsDansComboBox();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewVentes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        public string PrendrePremierMot(string txt)
+        {
+            string[] mots = txt.Split(' ');
+            return mots[0];
+        }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            string produits = "";
+
+            foreach (DataGridViewRow row in dataGridViewPannier.Rows)
+            {
+                // Ignorer la dernière ligne vide
+                if (row.IsNewRow)
+                    continue;
+
+                string idProduit = row.Cells[0].Value.ToString();
+                string qtte = row.Cells[1].Value.ToString();
+                string pvu = row.Cells[2].Value.ToString();
+
+                produits += idProduit + "," + qtte + "," + pvu + ";";
+            }
+
+
+
+
+
+            connexion.InsererVenteAvecPlusieursProduitsSimple(
+                int.Parse(PrendrePremierMot(comboBoxClients.Text)),
+                produits,
+                "Vente enregistrée avec succès"
+            );
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(PrendrePremierMot(comboBoxProduits.Text));
+            dataGridViewPannier.Rows.Add(PrendrePremierMot( comboBoxProduits.Text),comboBoxProduits.Text,txtPVU.Text, txtQtte.Text,float.Parse(txtPVU.Text)*float.Parse(txtQtte.Text));
         }
     }
 }

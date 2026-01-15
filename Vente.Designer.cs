@@ -33,24 +33,25 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPVU = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtQtte = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewPannier = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxProduits = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewVentes = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPannier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVentes)).BeginInit();
@@ -67,7 +68,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 64);
+            this.label1.Location = new System.Drawing.Point(28, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 20);
             this.label1.TabIndex = 1;
@@ -75,7 +76,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(166, 124);
+            this.dateTimePicker1.Location = new System.Drawing.Point(166, 123);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(298, 26);
             this.dateTimePicker1.TabIndex = 4;
@@ -93,45 +94,64 @@
             // 
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtPVU);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtQtte);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.dataGridViewPannier);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.comboBoxProduits);
             this.panel1.Location = new System.Drawing.Point(487, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(697, 509);
+            this.panel1.Size = new System.Drawing.Size(698, 511);
             this.panel1.TabIndex = 6;
             // 
-            // textBox2
+            // button1
             // 
-            this.textBox2.Location = new System.Drawing.Point(203, 194);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(298, 26);
-            this.textBox2.TabIndex = 17;
+            this.button1.Location = new System.Drawing.Point(233, 199);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 41);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Ajouter au panier";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(303, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 20);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Pannier";
+            // 
+            // txtPVU
+            // 
+            this.txtPVU.Location = new System.Drawing.Point(202, 148);
+            this.txtPVU.Name = "txtPVU";
+            this.txtPVU.Size = new System.Drawing.Size(298, 26);
+            this.txtPVU.TabIndex = 17;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(65, 200);
+            this.label5.Location = new System.Drawing.Point(65, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 20);
             this.label5.TabIndex = 16;
             this.label5.Text = "Prix U Vente";
             // 
-            // textBox1
+            // txtQtte
             // 
-            this.textBox1.Location = new System.Drawing.Point(203, 124);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(298, 26);
-            this.textBox1.TabIndex = 15;
+            this.txtQtte.Location = new System.Drawing.Point(202, 100);
+            this.txtQtte.Name = "txtQtte";
+            this.txtQtte.Size = new System.Drawing.Size(298, 26);
+            this.txtQtte.TabIndex = 15;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(65, 129);
+            this.label4.Location = new System.Drawing.Point(65, 106);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 14;
@@ -145,12 +165,13 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4});
-            this.dataGridViewPannier.Location = new System.Drawing.Point(69, 329);
+            this.Column4,
+            this.Column5});
+            this.dataGridViewPannier.Location = new System.Drawing.Point(52, 255);
             this.dataGridViewPannier.Name = "dataGridViewPannier";
             this.dataGridViewPannier.RowHeadersWidth = 62;
             this.dataGridViewPannier.RowTemplate.Height = 28;
-            this.dataGridViewPannier.Size = new System.Drawing.Size(607, 168);
+            this.dataGridViewPannier.Size = new System.Drawing.Size(608, 168);
             this.dataGridViewPannier.TabIndex = 13;
             // 
             // label2
@@ -165,52 +186,10 @@
             // comboBoxProduits
             // 
             this.comboBoxProduits.FormattingEnabled = true;
-            this.comboBoxProduits.Location = new System.Drawing.Point(203, 58);
+            this.comboBoxProduits.Location = new System.Drawing.Point(202, 58);
             this.comboBoxProduits.Name = "comboBoxProduits";
             this.comboBoxProduits.Size = new System.Drawing.Size(298, 28);
             this.comboBoxProduits.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(303, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 20);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Pannier";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(307, 256);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 41);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Ajouter au panier";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Id_Produits";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Description";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "PU";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "PTT";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
             // 
             // dataGridViewVentes
             // 
@@ -224,8 +203,9 @@
             this.dataGridViewVentes.Name = "dataGridViewVentes";
             this.dataGridViewVentes.RowHeadersWidth = 62;
             this.dataGridViewVentes.RowTemplate.Height = 28;
-            this.dataGridViewVentes.Size = new System.Drawing.Size(1152, 196);
+            this.dataGridViewVentes.Size = new System.Drawing.Size(1152, 197);
             this.dataGridViewVentes.TabIndex = 14;
+            this.dataGridViewVentes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVentes_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -247,18 +227,49 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(317, 613);
+            this.button2.Location = new System.Drawing.Point(328, 567);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(192, 45);
             this.button2.TabIndex = 15;
             this.button2.Text = "Enregistrer vente";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Id_Produits";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Description";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "PU";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Qtte";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "PTT";
+            this.Column5.MinimumWidth = 8;
+            this.Column5.Name = "Column5";
             // 
             // Vente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1210, 883);
+            this.ClientSize = new System.Drawing.Size(1414, 774);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridViewVentes);
             this.Controls.Add(this.panel1);
@@ -286,22 +297,23 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPVU;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtQtte;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridViewPannier;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxProduits;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridView dataGridViewVentes;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

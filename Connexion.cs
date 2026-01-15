@@ -77,6 +77,49 @@ namespace ExerciceL3
                     conn.Close();
             }
         }
+        public void InsererVenteAvecPlusieursProduitsSimple(
+        int idClient,
+        string produits,
+        string messageSucces
+)
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+
+                // Construction de la requête SQL simple
+                string requete =
+                    "EXEC InsererVenteAvecPlusieursProduits " +
+                    idClient + ", '" + produits + "'";
+
+                OleDbCommand cmd = new OleDbCommand(requete, conn);
+                cmd.CommandType = CommandType.Text;
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show(
+                    messageSucces,
+                    "Succès",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Erreur",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
+        }
 
     }
 }
