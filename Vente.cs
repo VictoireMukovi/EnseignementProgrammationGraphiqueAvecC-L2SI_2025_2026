@@ -65,6 +65,7 @@ namespace ExerciceL3
         {
             ChargerProduitsDansComboBox();
             ChargerClientsDansComboBox();
+            Afficher();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -87,7 +88,6 @@ namespace ExerciceL3
         {
 
             string produits = "";
-
             foreach (DataGridViewRow row in dataGridViewPannier.Rows)
             {
                 // Ignorer la dernière ligne vide
@@ -95,23 +95,63 @@ namespace ExerciceL3
                     continue;
 
                 string idProduit = row.Cells[0].Value.ToString();
-                string qtte = row.Cells[1].Value.ToString();
-                string pvu = row.Cells[2].Value.ToString();
+                string qtte = row.Cells[2].Value.ToString();
+                string pvu = row.Cells[3].Value.ToString();
+                string ptt = row.Cells[4].Value.ToString();
 
                 produits += idProduit + "," + qtte + "," + pvu + ";";
             }
 
-
-
-
+            //MessageBox.Show(produits);
 
             connexion.InsererVenteAvecPlusieursProduitsSimple(
-                int.Parse(PrendrePremierMot(comboBoxClients.Text)),
-                produits,
-                "Vente enregistrée avec succès"
-            );
-        }
+                int.Parse(PrendrePremierMot(comboBoxClients.Text)), 
+                produits,"Vente enregistrer avec succes");
 
+            Afficher();
+
+            dataGridViewPannier.Rows.Clear();
+
+
+
+
+
+
+
+
+
+
+            //connexion.InsererVenteAvecPlusieursProduitsSimple(
+            //    int.Parse(PrendrePremierMot(comboBoxClients.Text)),
+            //    produits,
+            //    "Vente enregistrée avec succès"
+            //);
+        }
+        void Afficher()
+        {
+            OleDbConnection con = connexion.GetConnexion();
+
+            string req = "SELECT v.IdVente,c.Nom,v.DateVente FROM Vente as v INNER JOIN Clients as c ON c.IdClient=v.IdClient ";
+            OleDbCommand cmd = new OleDbCommand(req, con);
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            reader.Read();
+
+
+            dataGridViewVentes.Rows.Clear();
+
+            while (reader.Read())
+            {
+                dataGridViewVentes.Rows.Add(
+                    reader[0].ToString(), // Colonne 1
+                    reader[1].ToString(), // Colonne 2
+                    reader[2].ToString()  // Colonne 3
+                );
+            }
+
+            reader.Close();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(PrendrePremierMot(comboBoxProduits.Text));
