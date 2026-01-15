@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,9 +18,28 @@ namespace ExerciceL3
         public frmClients()
         {
             InitializeComponent();
+            SetupContextMenuMembre();
         }
         OleDbConnection conn = new OleDbConnection();
+        private ContextMenuStrip contextMenu;   
+     
 
+        private void SetupContextMenuMembre()
+        {
+            contextMenu = new ContextMenuStrip();
+
+            var deleteMenuItem = new ToolStripMenuItem("Effacer ce client");
+            deleteMenuItem.Click += DeleteMenuItem_Click;
+            contextMenu.Items.Add(deleteMenuItem);
+            
+        }
+        private async void DeleteMenuItem_Click(object sender, EventArgs e)
+        {
+            
+
+            var selectedRow = dataGridViewClients.SelectedRows[0];
+            
+        }
         //void commandeZetu(string requetteYetu) {
 
         //    if (conn.State != ConnectionState.Open)
@@ -70,26 +90,26 @@ namespace ExerciceL3
 
         private void frmClients_Load(object sender, EventArgs e)
         {
-            try
-            {
-                //conn.ConnectionString = @"Provider=SQLOLEDB;Data Source=; Initial Catalog=Boutique;User ID=sa; password=1234;Persist Security Info=false";
+            ////try
+            ////{
+            ////    //conn.ConnectionString = @"Provider=SQLOLEDB;Data Source=; Initial Catalog=Boutique;User ID=sa; password=1234;Persist Security Info=false";
 
-                conn.ConnectionString =
-                @"Provider=SQLOLEDB;
-                  Data Source=DESKTOP-5ILRABH;
-                  Initial Catalog=GestionBoutique;
-                  Integrated Security=SSPI;
-                  Persist Security Info=False;";
+            ////    conn.ConnectionString =
+            ////    @"Provider=SQLOLEDB;
+            ////      Data Source=DESKTOP-5ILRABH;
+            ////      Initial Catalog=GestionBoutique;
+            ////      Integrated Security=SSPI;
+            ////      Persist Security Info=False;";
 
-                conn.Open();
+            ////    conn.Open();
 
 
-            }
-            catch
-            {
+            ////}
+            ////catch
+            ////{
 
-                MessageBox.Show(" Erreur de connexion à la base de données");
-            }
+            ////    MessageBox.Show(" Erreur de connexion à la base de données");
+            ////}
              Afficher();
 
         }
@@ -138,6 +158,28 @@ namespace ExerciceL3
         private void button3_Click(object sender, EventArgs e)
         {
             commandeZetu("DELETE FROM Clients WHERE IdClient=1","Suppression réussie");
+        }
+
+        private void dataGridViewClients_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewClients.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridViewClients.SelectedRows[0];
+                txtNom.Text = selectedRow.Cells[0].Value.ToString();
+                txtAdress.Text = selectedRow.Cells[1].Value.ToString();
+                
+            }
+        }
+
+        private void dataGridViewClients_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewClients.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridViewClients.SelectedRows[0];
+                txtNom.Text = selectedRow.Cells[0].Value.ToString();
+                txtAdress.Text = selectedRow.Cells[1].Value.ToString();
+
+            } 
         }
     }
 }

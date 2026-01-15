@@ -36,6 +36,11 @@
             this.txtDesignation = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.dataGridViewProduit = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduit)).BeginInit();
             this.SuspendLayout();
             // 
             // button3
@@ -108,11 +113,46 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // dataGridViewProduit
+            // 
+            this.dataGridViewProduit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewProduit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.dataGridViewProduit.Location = new System.Drawing.Point(80, 307);
+            this.dataGridViewProduit.Name = "dataGridViewProduit";
+            this.dataGridViewProduit.RowHeadersWidth = 62;
+            this.dataGridViewProduit.RowTemplate.Height = 28;
+            this.dataGridViewProduit.Size = new System.Drawing.Size(729, 150);
+            this.dataGridViewProduit.TabIndex = 16;
+            this.dataGridViewProduit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Id Produit";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Designation";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "PVU";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            // 
             // frmProduits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 455);
+            this.Controls.Add(this.dataGridViewProduit);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -124,6 +164,7 @@
             this.Name = "frmProduits";
             this.Text = "frmProduits";
             this.Load += new System.EventHandler(this.frmProduits_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +180,9 @@
         private System.Windows.Forms.TextBox txtDesignation;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dataGridViewProduit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

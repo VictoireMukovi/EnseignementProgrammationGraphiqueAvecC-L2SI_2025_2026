@@ -58,5 +58,11 @@ namespace ExerciceL3
                 MessageBox.Show(" Erreur de connexion à la base de données");
             }
         }
+
+        private void venteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vente vente = new Vente();
+            vente.Show();
+        }
     }
 }

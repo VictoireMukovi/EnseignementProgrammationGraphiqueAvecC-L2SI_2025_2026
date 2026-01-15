@@ -76,6 +76,7 @@
             this.venteToolStripMenuItem.Name = "venteToolStripMenuItem";
             this.venteToolStripMenuItem.Size = new System.Drawing.Size(72, 29);
             this.venteToolStripMenuItem.Text = "Vente";
+            this.venteToolStripMenuItem.Click += new System.EventHandler(this.venteToolStripMenuItem_Click);
             // 
             // frmMain
             // 

@@ -39,3 +39,22 @@ CREATE TABLE DetailsVente (
 );
 
 
+
+
+
+	CREATE PROCEDURE InsererVente
+(
+    @IdClient INT,
+    @DateVente DATETIME,
+    @IdVente INT OUTPUT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Vente (IdClient, DateVente)
+    VALUES (@IdClient, @DateVente);
+
+    SET @IdVente = SCOPE_IDENTITY();
+END;
+GO
