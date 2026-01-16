@@ -17,6 +17,10 @@ namespace ExerciceL3
             InitializeComponent();
         }
         Connexion connexion = new Connexion();
+        public static bool IsFormOpen(Type formType)
+        {
+            return false;
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {

@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace ExerciceL3
 {
-    public partial class frmVentes : Form
+    public partial class FormPetitRapport : Form
     {
-        public frmVentes()
+        public FormPetitRapport()
         {
             InitializeComponent();
         }
-
     }
 }

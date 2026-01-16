@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
+using System.Xml.Linq;
 
 namespace ExerciceL3
 {
@@ -57,9 +61,71 @@ namespace ExerciceL3
                    reader["IdProduit"].ToString()+"  " + reader["Description"].ToString()
                 );
             }
-
             reader.Close();
         }
+        // Adaptateur OLE DB : sert à exécuter une requête SQL
+        // et à remplir un DataSet avec les données récupérées
+        OleDbDataAdapter InvPhisiqueAdapter;
+
+        // Objet Crystal Report qui contiendra le rapport final
+        private ReportDocument document;
+
+        void RapportVente()
+        {
+            // Requête SQL qui récupère toutes les informations
+            // d'une vente précise (IdVente = 3)
+            // avec les données du client et des produits vendus
+            string req =
+                "SELECT " +
+                "v.IdVente AS IdVente, " +
+                "v.DateVente AS DateVente, " +
+                "c.Nom AS Nom, " +
+                "p.IdProduit AS IdProduit, " +
+                "p.Description AS Designation, " +
+                "dv.Qtte AS Qtte, " +
+                "dv.PU AS PU, " +
+                "dv.Ptt AS PT " +
+                "FROM Vente v " +
+                "INNER JOIN Clients c ON v.IdClient = c.IdClient " +
+                "INNER JOIN DetailsVente dv ON v.IdVente = dv.IdVente " +
+                "INNER JOIN Produits p ON dv.IdProduit = p.IdProduit " +
+                "WHERE v.IdVente = 3;";
+
+            // Récupération de la connexion à la base de données
+            OleDbConnection con = connexion.GetConnexion();
+
+            // Création de l'adaptateur OLE DB avec la requête SQL
+            // et la connexion à la base de données
+            OleDbDataAdapter InvPhisiqueAdapter =
+                new OleDbDataAdapter(req, con);
+
+            // Désactivation du timeout pour les requêtes longues
+            InvPhisiqueAdapter.SelectCommand.CommandTimeout = 0;
+
+            // Création du DataSet physique typé
+            // (celui utilisé lors de la conception du rapport Crystal)
+            DataSet1 ds = new DataSet1();
+
+            // Remplissage de la table "DataTableFacture"
+            // avec les données retournées par la requête SQL
+            InvPhisiqueAdapter.Fill(ds.DataTableFacture);
+
+            // Instanciation du rapport Crystal
+            CrystalReportFac CFACTT = new CrystalReportFac();
+
+            // Association du DataSet au rapport Crystal
+            CFACTT.SetDataSource(ds);
+
+            // Création du formulaire contenant le CrystalReportViewer
+            FormPetitRapport frm = new FormPetitRapport();
+
+            // Chargement du rapport dans le CrystalReportViewer
+            frm.crystalReportViewer1.ReportSource = CFACTT;
+
+            // Affichage du formulaire contenant le rapport
+            frm.Show();
+        }
+
 
         private void Vente_Load(object sender, EventArgs e)
         {
@@ -156,6 +222,11 @@ namespace ExerciceL3
         {
             //MessageBox.Show(PrendrePremierMot(comboBoxProduits.Text));
             dataGridViewPannier.Rows.Add(PrendrePremierMot( comboBoxProduits.Text),comboBoxProduits.Text,txtPVU.Text, txtQtte.Text,float.Parse(txtPVU.Text)*float.Parse(txtQtte.Text));
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            RapportVente();
         }
     }
 }

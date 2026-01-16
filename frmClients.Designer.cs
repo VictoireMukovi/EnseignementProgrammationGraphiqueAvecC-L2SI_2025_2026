@@ -97,7 +97,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(345, 317);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 31);
+            this.button3.Size = new System.Drawing.Size(161, 38);
             this.button3.TabIndex = 7;
             this.button3.Text = "Supprimer";
             this.button3.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@
             this.venteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1050, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1050, 33);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 

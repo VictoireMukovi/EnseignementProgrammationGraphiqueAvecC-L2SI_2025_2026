@@ -20,6 +20,10 @@ namespace ExerciceL3
             InitializeComponent();
             SetupContextMenuMembre();
         }
+        public static bool IsFormOpen(Type formType)
+        {
+            return false;
+        }
         OleDbConnection conn = new OleDbConnection();
         private ContextMenuStrip contextMenu;   
      
@@ -155,6 +159,15 @@ namespace ExerciceL3
 
             reader.Close();
         }
+
+
+
+
+        
+
+
+
+
         private void button3_Click(object sender, EventArgs e)
         {
             commandeZetu("DELETE FROM Clients WHERE IdClient=1","Suppression réussie");
