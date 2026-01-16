@@ -81,9 +81,12 @@
             // 
             // pnlCentraleFrmmain
             // 
+            this.pnlCentraleFrmmain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCentraleFrmmain.Location = new System.Drawing.Point(12, 27);
             this.pnlCentraleFrmmain.Name = "pnlCentraleFrmmain";
-            this.pnlCentraleFrmmain.Size = new System.Drawing.Size(865, 542);
+            this.pnlCentraleFrmmain.Size = new System.Drawing.Size(937, 460);
             this.pnlCentraleFrmmain.TabIndex = 1;
             this.pnlCentraleFrmmain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCentraleFrmmain_Paint);
             // 

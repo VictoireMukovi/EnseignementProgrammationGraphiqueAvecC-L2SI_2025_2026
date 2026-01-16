@@ -111,7 +111,7 @@ namespace ExerciceL3
             InvPhisiqueAdapter.Fill(ds.DataTableFacture);
 
             // Instanciation du rapport Crystal
-            CrystalReportFac CFACTT = new CrystalReportFac();
+            MonFacture CFACTT = new MonFacture();
 
             // Association du DataSet au rapport Crystal
             CFACTT.SetDataSource(ds);

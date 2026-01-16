@@ -48,6 +48,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClients)).BeginInit();
             this.SuspendLayout();
@@ -55,49 +56,55 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(130, 132);
+            this.label1.Location = new System.Drawing.Point(87, 86);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom Client";
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(263, 125);
+            this.txtNom.Location = new System.Drawing.Point(175, 81);
+            this.txtNom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(263, 26);
+            this.txtNom.Size = new System.Drawing.Size(177, 20);
             this.txtNom.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(134, 203);
+            this.label2.Location = new System.Drawing.Point(89, 132);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Adresse";
             // 
             // txtAdress
             // 
-            this.txtAdress.Location = new System.Drawing.Point(263, 203);
+            this.txtAdress.Location = new System.Drawing.Point(175, 115);
+            this.txtAdress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAdress.Name = "txtAdress";
-            this.txtAdress.Size = new System.Drawing.Size(263, 26);
+            this.txtAdress.Size = new System.Drawing.Size(177, 20);
             this.txtAdress.TabIndex = 3;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(565, 317);
+            this.button2.Location = new System.Drawing.Point(377, 206);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 31);
+            this.button2.Size = new System.Drawing.Size(107, 20);
             this.button2.TabIndex = 6;
             this.button2.Text = "MEA";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(345, 317);
+            this.button3.Location = new System.Drawing.Point(230, 206);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 38);
+            this.button3.Size = new System.Drawing.Size(107, 25);
             this.button3.TabIndex = 7;
             this.button3.Text = "Supprimer";
             this.button3.UseVisualStyleBackColor = true;
@@ -105,9 +112,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(138, 310);
+            this.button1.Location = new System.Drawing.Point(92, 202);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 45);
+            this.button1.Size = new System.Drawing.Size(106, 29);
             this.button1.TabIndex = 5;
             this.button1.Text = "Enregistrer";
             this.button1.UseVisualStyleBackColor = true;
@@ -121,7 +129,6 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.acceuilToolStripMenuItem,
@@ -130,32 +137,33 @@
             this.venteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1050, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(700, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // acceuilToolStripMenuItem
             // 
             this.acceuilToolStripMenuItem.Name = "acceuilToolStripMenuItem";
-            this.acceuilToolStripMenuItem.Size = new System.Drawing.Size(83, 29);
+            this.acceuilToolStripMenuItem.Size = new System.Drawing.Size(58, 22);
             this.acceuilToolStripMenuItem.Text = "Acceuil";
             // 
             // clientsToolStripMenuItem
             // 
             this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
-            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(80, 29);
+            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(55, 22);
             this.clientsToolStripMenuItem.Text = "Clients";
             // 
             // produitsToolStripMenuItem
             // 
             this.produitsToolStripMenuItem.Name = "produitsToolStripMenuItem";
-            this.produitsToolStripMenuItem.Size = new System.Drawing.Size(94, 29);
+            this.produitsToolStripMenuItem.Size = new System.Drawing.Size(63, 22);
             this.produitsToolStripMenuItem.Text = "Produits";
             // 
             // venteToolStripMenuItem
             // 
             this.venteToolStripMenuItem.Name = "venteToolStripMenuItem";
-            this.venteToolStripMenuItem.Size = new System.Drawing.Size(72, 29);
+            this.venteToolStripMenuItem.Size = new System.Drawing.Size(48, 22);
             this.venteToolStripMenuItem.Text = "Vente";
             // 
             // dataGridViewClients
@@ -166,11 +174,12 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridViewClients.Location = new System.Drawing.Point(134, 380);
+            this.dataGridViewClients.Location = new System.Drawing.Point(89, 247);
+            this.dataGridViewClients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewClients.Name = "dataGridViewClients";
             this.dataGridViewClients.RowHeadersWidth = 62;
             this.dataGridViewClients.RowTemplate.Height = 28;
-            this.dataGridViewClients.Size = new System.Drawing.Size(693, 150);
+            this.dataGridViewClients.Size = new System.Drawing.Size(462, 98);
             this.dataGridViewClients.TabIndex = 10;
             this.dataGridViewClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClients_CellClick);
             this.dataGridViewClients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClients_CellContentClick);
@@ -195,25 +204,39 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(263, 80);
+            this.textBox1.Location = new System.Drawing.Point(175, 52);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 26);
+            this.textBox1.Size = new System.Drawing.Size(177, 20);
             this.textBox1.TabIndex = 12;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(130, 87);
+            this.label3.Location = new System.Drawing.Point(87, 57);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 20);
+            this.label3.Size = new System.Drawing.Size(16, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Id";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(489, 81);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 25);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Listes clients";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // frmClients
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 555);
+            this.ClientSize = new System.Drawing.Size(700, 361);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridViewClients);
@@ -225,6 +248,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmClients";
             this.Text = "frmClients";
             this.Load += new System.EventHandler(this.frmClients_Load);
@@ -257,5 +281,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button4;
     }
 }
